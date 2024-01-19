@@ -1,11 +1,10 @@
 package testutilities
 
 import (
-	"math"
 	"testing"
-)
 
-const EPSILON = 1e-4
+	"github.com/jebschiefer/ray-tracer-challenge/src/utilities"
+)
 
 func CompareBools(t *testing.T, got bool, want bool) {
 	if got != want {
@@ -14,7 +13,7 @@ func CompareBools(t *testing.T, got bool, want bool) {
 }
 
 func CompareFloats(t *testing.T, got float64, want float64) {
-	if math.Abs(got-want) > EPSILON {
+	if !utilities.FloatsEqual(got, want) {
 		t.Errorf("got %f, want %f", got, want)
 	}
 }

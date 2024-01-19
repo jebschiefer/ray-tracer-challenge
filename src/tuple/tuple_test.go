@@ -51,3 +51,12 @@ func TestCreateVector(t *testing.T) {
 	testutilities.CompareBools(t, tuple.isPoint(), false)
 	testutilities.CompareBools(t, tuple.isVector(), true)
 }
+
+func TestEquals(t *testing.T) {
+	a := Point(4.0, -4.0, 3.0)
+	b := Point(4.0, -4.0, 3.0)
+	c := Point(4.0, -4.0, 5.0)
+
+	testutilities.CompareBools(t, a.equals(b), true)
+	testutilities.CompareBools(t, a.equals(c), false)
+}

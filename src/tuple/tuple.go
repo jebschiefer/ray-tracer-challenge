@@ -1,10 +1,19 @@
 package tuple
 
+import "github.com/jebschiefer/ray-tracer-challenge/src/utilities"
+
 type Tuple struct {
 	x float64
 	y float64
 	z float64
 	w float64
+}
+
+func (a Tuple) equals(b Tuple) bool {
+	return utilities.FloatsEqual(a.x, b.x) &&
+		utilities.FloatsEqual(a.y, b.y) &&
+		utilities.FloatsEqual(a.z, b.z) &&
+		utilities.FloatsEqual(a.w, b.w)
 }
 
 func (tuple Tuple) isPoint() bool {

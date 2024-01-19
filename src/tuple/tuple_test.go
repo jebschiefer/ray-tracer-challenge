@@ -60,3 +60,13 @@ func TestEquals(t *testing.T) {
 	testutilities.CompareBools(t, a.equals(b), true)
 	testutilities.CompareBools(t, a.equals(c), false)
 }
+
+func TestAddTwoTuples(t *testing.T) {
+	a := Point(3, -2, 5)
+	b := Vector(-2, 3, 1)
+	c := Point(1, 1, 6)
+
+	sum := a.add(b)
+
+	testutilities.CompareBools(t, sum.equals(c), true)
+}

@@ -9,6 +9,15 @@ type Tuple struct {
 	w float64
 }
 
+func (a Tuple) add(b Tuple) Tuple {
+	return Tuple{
+		a.x + b.x,
+		a.y + b.y,
+		a.z + b.z,
+		a.w + b.w,
+	}
+}
+
 func (a Tuple) equals(b Tuple) bool {
 	return utilities.FloatsEqual(a.x, b.x) &&
 		utilities.FloatsEqual(a.y, b.y) &&

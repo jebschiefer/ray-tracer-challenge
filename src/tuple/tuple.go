@@ -9,13 +9,12 @@ type Tuple struct {
 	w float64
 }
 
-func (a Tuple) add(b Tuple) Tuple {
-	return Tuple{
-		a.x + b.x,
-		a.y + b.y,
-		a.z + b.z,
-		a.w + b.w,
-	}
+func Point(x, y, z float64) Tuple {
+	return Tuple{x, y, z, 1.0}
+}
+
+func Vector(x, y, z float64) Tuple {
+	return Tuple{x, y, z, 0.0}
 }
 
 func (a Tuple) equals(b Tuple) bool {
@@ -33,10 +32,20 @@ func (tuple Tuple) isVector() bool {
 	return tuple.w == 0
 }
 
-func Point(x, y, z float64) Tuple {
-	return Tuple{x, y, z, 1.0}
+func (a Tuple) add(b Tuple) Tuple {
+	return Tuple{
+		a.x + b.x,
+		a.y + b.y,
+		a.z + b.z,
+		a.w + b.w,
+	}
 }
 
-func Vector(x, y, z float64) Tuple {
-	return Tuple{x, y, z, 0.0}
+func (a Tuple) subtract(b Tuple) Tuple {
+	return Tuple{
+		a.x - b.x,
+		a.y - b.y,
+		a.z - b.z,
+		a.w - b.w,
+	}
 }

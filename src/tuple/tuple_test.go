@@ -70,3 +70,33 @@ func TestAddTwoTuples(t *testing.T) {
 
 	testutilities.CompareBools(t, sum.equals(c), true)
 }
+
+func TestSubtractTwoPoints(t *testing.T) {
+	a := Point(3, 2, 1)
+	b := Point(5, 6, 7)
+	c := Vector(-2, -4, -6)
+
+	difference := a.subtract(b)
+
+	testutilities.CompareBools(t, difference.equals(c), true)
+}
+
+func TestSubtractVectorFromPoint(t *testing.T) {
+	a := Point(3, 2, 1)
+	b := Vector(5, 6, 7)
+	c := Point(-2, -4, -6)
+
+	difference := a.subtract(b)
+
+	testutilities.CompareBools(t, difference.equals(c), true)
+}
+
+func TestSubtractTwoVectors(t *testing.T) {
+	a := Vector(3, 2, 1)
+	b := Vector(5, 6, 7)
+	c := Vector(-2, -4, -6)
+
+	difference := a.subtract(b)
+
+	testutilities.CompareBools(t, difference.equals(c), true)
+}

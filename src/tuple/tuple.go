@@ -14,3 +14,11 @@ func (tuple Tuple) isPoint() bool {
 func (tuple Tuple) isVector() bool {
 	return tuple.w == 0
 }
+
+func Point(x, y, z float64) Tuple {
+	return Tuple{x, y, z, 1.0}
+}
+
+func Vector(x, y, z float64) Tuple {
+	return Tuple{x, y, z, 0.0}
+}

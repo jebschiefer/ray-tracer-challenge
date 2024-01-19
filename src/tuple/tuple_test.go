@@ -39,3 +39,15 @@ func TestIsVector(t *testing.T) {
 	testutilities.CompareBools(t, tuple.isPoint(), false)
 	testutilities.CompareBools(t, tuple.isVector(), true)
 }
+
+func TestCreatePoint(t *testing.T) {
+	tuple := Point(4.0, -4.0, 3.0)
+	testutilities.CompareBools(t, tuple.isPoint(), true)
+	testutilities.CompareBools(t, tuple.isVector(), false)
+}
+
+func TestCreateVector(t *testing.T) {
+	tuple := Vector(4.0, -4.0, 3.0)
+	testutilities.CompareBools(t, tuple.isPoint(), false)
+	testutilities.CompareBools(t, tuple.isVector(), true)
+}

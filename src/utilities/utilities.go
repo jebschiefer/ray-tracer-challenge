@@ -1,6 +1,8 @@
 package utilities
 
-import "math"
+import (
+	"math"
+)
 
 const EPSILON = 1e-4
 

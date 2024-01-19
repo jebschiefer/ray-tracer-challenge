@@ -7,7 +7,7 @@ import (
 )
 
 func TestIsPoint(t *testing.T) {
-	tuple := Tuple{
+	tuple := tuple{
 		x: 4.3,
 		y: -4.2,
 		z: 3.1,
@@ -24,7 +24,7 @@ func TestIsPoint(t *testing.T) {
 }
 
 func TestIsVector(t *testing.T) {
-	tuple := Tuple{
+	tuple := tuple{
 		x: 4.3,
 		y: -4.2,
 		z: 3.1,

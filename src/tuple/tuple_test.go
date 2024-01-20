@@ -109,3 +109,21 @@ func TestNegateTuple(t *testing.T) {
 
 	testutilities.CompareBools(t, negated.equals(b), true)
 }
+
+func TestMupltiplyTupleByScalar(t *testing.T) {
+	a := tuple{1, -2, 3, -4}
+	b := tuple{3.5, -7, 10.5, -14}
+
+	multiplied := a.multiply(3.5)
+
+	testutilities.CompareBools(t, multiplied.equals(b), true)
+}
+
+func TestMupltiplyTupleByFraction(t *testing.T) {
+	a := tuple{1, -2, 3, -4}
+	b := tuple{0.5, -1, 1.5, -2}
+
+	multiplied := a.multiply(0.5)
+
+	testutilities.CompareBools(t, multiplied.equals(b), true)
+}

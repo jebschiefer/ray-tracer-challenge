@@ -58,3 +58,12 @@ func (a tuple) negate() tuple {
 		0 - a.w,
 	}
 }
+
+func (a tuple) multiply(v float64) tuple {
+	return tuple{
+		a.x * v,
+		a.y * v,
+		a.z * v,
+		a.w * v,
+	}
+}

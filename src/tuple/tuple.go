@@ -49,3 +49,12 @@ func (a tuple) subtract(b tuple) tuple {
 		a.w - b.w,
 	}
 }
+
+func (a tuple) negate() tuple {
+	return tuple{
+		0 - a.x,
+		0 - a.y,
+		0 - a.z,
+		0 - a.w,
+	}
+}

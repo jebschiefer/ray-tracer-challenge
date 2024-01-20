@@ -100,3 +100,12 @@ func TestSubtractTwoVectors(t *testing.T) {
 
 	testutilities.CompareBools(t, difference.equals(c), true)
 }
+
+func TestNegateTuple(t *testing.T) {
+	a := tuple{1, -2, 3, -4}
+	b := tuple{-1, 2, -3, 4}
+
+	negated := a.negate()
+
+	testutilities.CompareBools(t, negated.equals(b), true)
+}

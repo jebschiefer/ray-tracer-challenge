@@ -1,6 +1,10 @@
 package tuple
 
-import "github.com/jebschiefer/ray-tracer-challenge/src/utilities"
+import (
+	"math"
+
+	"github.com/jebschiefer/ray-tracer-challenge/src/utilities"
+)
 
 type tuple struct {
 	x float64
@@ -70,4 +74,11 @@ func (a tuple) multiply(v float64) tuple {
 
 func (a tuple) divide(v float64) tuple {
 	return a.multiply(1 / v)
+}
+
+func (a tuple) magnitude() float64 {
+	return math.Sqrt(math.Pow(a.x, 2) +
+		math.Pow(a.y, 2) +
+		math.Pow(a.z, 2) +
+		math.Pow(a.w, 2))
 }

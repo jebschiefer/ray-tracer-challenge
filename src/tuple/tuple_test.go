@@ -1,6 +1,7 @@
 package tuple
 
 import (
+	"math"
 	"testing"
 
 	testutilities "github.com/jebschiefer/ray-tracer-challenge/src/test-utilities"
@@ -135,4 +136,21 @@ func TestDivideTupleByScalar(t *testing.T) {
 	multiplied := a.divide(2)
 
 	testutilities.CompareBools(t, multiplied.equals(b), true)
+}
+
+func TestMagnitudeOfVector(t *testing.T) {
+	v := Vector(1, 0, 0)
+	testutilities.CompareFloats(t, v.magnitude(), 1)
+
+	v = Vector(0, 1, 0)
+	testutilities.CompareFloats(t, v.magnitude(), 1)
+
+	v = Vector(0, 0, 1)
+	testutilities.CompareFloats(t, v.magnitude(), 1)
+
+	v = Vector(1, 2, 3)
+	testutilities.CompareFloats(t, v.magnitude(), math.Sqrt(14))
+
+	v = Vector(-1, -2, -3)
+	testutilities.CompareFloats(t, v.magnitude(), math.Sqrt(14))
 }

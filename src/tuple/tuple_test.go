@@ -127,3 +127,12 @@ func TestMupltiplyTupleByFraction(t *testing.T) {
 
 	testutilities.CompareBools(t, multiplied.equals(b), true)
 }
+
+func TestDivideTupleByScalar(t *testing.T) {
+	a := tuple{1, -2, 3, -4}
+	b := tuple{0.5, -1, 1.5, -2}
+
+	multiplied := a.divide(2)
+
+	testutilities.CompareBools(t, multiplied.equals(b), true)
+}

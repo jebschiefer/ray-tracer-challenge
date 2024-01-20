@@ -67,3 +67,7 @@ func (a tuple) multiply(v float64) tuple {
 		a.w * v,
 	}
 }
+
+func (a tuple) divide(v float64) tuple {
+	return a.multiply(1 / v)
+}
